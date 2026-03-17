@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infynetix Inc. | North American Enterprise Solutions</title>
+    <title>Infynetix Inc. | Enterprise IT & GRC Solutions</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -14,7 +14,6 @@
             --bg: #020617;
             --card-glass: rgba(15, 23, 42, 0.6);
             --electric-blue: #00d4ff;
-            --deep-violet: #7c3aed;
             --accent-gradient: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
@@ -22,9 +21,8 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: var(--text-main); overflow-x: hidden; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
 
-        /* Animated Background */
         .glow-mesh {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at 80% 20%, #1e1b4b, transparent 40%),
@@ -46,32 +44,32 @@
         section { padding: 100px 8% 60px; }
         .section-label { color: var(--electric-blue); text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; font-weight: 800; margin-bottom: 10px; display: block; }
         h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 25px; letter-spacing: -2px; }
-        h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 30px; font-weight: 800; letter-spacing: -1px; }
-
+        h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 30px; font-weight: 800; }
+        
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .hero h1 span { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.1rem; color: var(--text-dim); max-width: 750px; margin-bottom: 35px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .glass-card {
             background: var(--card-glass); border: 1px solid var(--border-glass);
-            padding: 35px; border-radius: 20px; transition: 0.4s;
+            padding: 40px; border-radius: 24px; transition: 0.4s;
         }
         .glass-card:hover { transform: translateY(-10px); border-color: var(--electric-blue); }
-        .glass-card i { font-size: 2rem; color: var(--electric-blue); margin-bottom: 20px; }
-        .glass-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
-        .glass-card p { font-size: 0.9rem; color: var(--text-dim); }
+        .glass-card i { font-size: 2.5rem; color: var(--electric-blue); margin-bottom: 25px; }
+        .glass-card ul { list-style: none; margin-top: 20px; }
+        .glass-card li { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 8px; display: flex; align-items: center; }
+        .glass-card li::before { content: "→"; color: var(--electric-blue); margin-right: 10px; font-weight: bold; }
 
-        .btn { padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .flex-container { display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
+        .flex-content { flex: 1; min-width: 300px; }
+        .flex-image { flex: 1; min-width: 300px; border-radius: 30px; overflow: hidden; border: 1px solid var(--border-glass); position: relative; }
+        .flex-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+
+        .btn { padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
         .btn-primary { background: var(--accent-gradient); color: white; }
-        
-        form { max-width: 600px; margin: 0 auto; background: var(--card-glass); padding: 40px; border-radius: 24px; border: 1px solid var(--border-glass); }
-        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: rgba(0,0,0,0.2); border: 1px solid var(--border-glass); color: white; border-radius: 8px; }
+        .btn-outline { border: 1px solid var(--electric-blue); color: var(--electric-blue); margin-left: 15px; }
 
         footer { padding: 80px 8% 40px; background: #010409; border-top: 1px solid var(--border-glass); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 40px; margin-bottom: 50px; }
-        .footer-col h4 { color: var(--electric-blue); margin-bottom: 20px; font-size: 0.9rem; }
-        .footer-col a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 10px; font-size: 0.85rem; }
         .footer-bottom { text-align: center; color: #475569; font-size: 0.8rem; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
@@ -83,130 +81,151 @@
         <div class="logo">INFYNETIX</div>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#solutions">Solutions</a></li>
-            <li><a href="#careers">Careers</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#consultation">Consultation</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
         <div data-aos="fade-up">
-            <span class="section-label">Enterprise Innovation</span>
+            <span class="section-label">Enterprise Technology</span>
             <h1>Digital <span>Resilience</span><br>Unmatched Scale</h1>
-            <p>High-end GRC consulting and network engineering for North America's most demanding sectors.</p>
-            <a href="#contact" class="btn btn-primary">Connect with Experts</a>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="grid" style="align-items: center;">
-            <div data-aos="fade-right">
-                <span class="section-label">Who we are</span>
-                <h2>Dedicated to North American Excellence</h2>
-                <p style="color: var(--text-dim);">Infynetix Inc. is a leading technology partner specializing in complex infrastructure and security governance. We provide high-impact solutions to Public and Private Sector organizations, ensuring reliability at every layer of the digital stack.</p>
-            </div>
-            <div class="glass-card" data-aos="fade-left">
-                <h3>Our Team of Experts</h3>
-                <p>Comprised of senior GRC analysts, network architects, and strategic consultants with deep industry roots.</p>
-            </div>
+            <p>Providing Fortune 500-level IT and cybersecurity services for North American enterprises and growing businesses.</p>
+            <a href="#consultation" class="btn btn-primary">Get Your Free Consultation</a>
         </div>
     </section>
 
     <section id="services">
-        <span class="section-label">Pillars of Service</span>
-        <h2>Comprehensive IT Solutions</h2>
+        <span class="section-label">Our Expertise</span>
+        <h2>End-to-End Technology Solutions</h2>
         <div class="grid">
             <div class="glass-card" data-aos="fade-up">
                 <i class="fas fa-microchip"></i>
-                <h3>System Management</h3>
-                <p>End-to-end oversight of enterprise systems and hardware lifecycles.</p>
+                <h3>IT Services & Consulting</h3>
+                <p>Strategic IT planning and ongoing operations support to keep your business running smoothly.</p>
+                <ul>
+                    <li>IT strategy & transformation</li>
+                    <li>Infrastructure planning & optimization</li>
+                    <li>24/7 operations support</li>
+                </ul>
             </div>
+
             <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-layer-group"></i>
-                <h3>System Integration</h3>
-                <p>Unifying disparate technologies into a cohesive, high-speed architecture.</p>
+                <i class="fas fa-network-wired"></i>
+                <h3>Networking Solutions</h3>
+                <p>Enterprise-grade design and security to ensure fast, reliable connectivity across your organization.</p>
+                <ul>
+                    <li>LAN/WAN design & deployment</li>
+                    <li>Network security & optimization</li>
+                    <li>Firewall, routing & switching</li>
+                </ul>
             </div>
+
             <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-briefcase"></i>
-                <h3>Project Management</h3>
-                <p>Methodical execution of large-scale IT transformations on time and on budget.</p>
+                <i class="fas fa-user-shield"></i>
+                <h3>Cybersecurity Services</h3>
+                <p>Comprehensive solutions to protect data and networks from evolving global threats.</p>
+                <ul>
+                    <li>Cloud & network security</li>
+                    <li>Risk assessment & compliance</li>
+                    <li>Security architecture design</li>
+                </ul>
             </div>
+
             <div class="glass-card" data-aos="fade-up">
+                <i class="fas fa-database"></i>
+                <h3>Cloud & Database</h3>
+                <p>Seamless migration and expert database management for optimal performance.</p>
+                <ul>
+                    <li>Cloud migration & optimization</li>
+                    <li>Secure cloud architecture</li>
+                    <li>Database design & management</li>
+                </ul>
+            </div>
+
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-code"></i>
                 <h3>Software Development</h3>
-                <p>Custom-built enterprise applications tailored for security and scalability.</p>
+                <p>Custom application development with enterprise-grade security built-in from day one.</p>
+                <ul>
+                    <li>Custom application development</li>
+                    <li>Backend & API development</li>
+                    <li>Secure coding practices</li>
+                </ul>
             </div>
-            <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-chart-line"></i>
-                <h3>Business Analysis</h3>
-                <p>Data-driven insights to bridge the gap between IT and business objectives.</p>
-            </div>
+
             <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Cybersecurity & GRC</h3>
-                <p>Governance, risk management, and compliance across North American frameworks.</p>
+                <i class="fas fa-project-diagram"></i>
+                <h3>Product Management</h3>
+                <p>Strategic technology leadership to drive innovation and manage complex platforms.</p>
+                <ul>
+                    <li>Product strategy & roadmaps</li>
+                    <li>Platform enablement</li>
+                    <li>Delivery management</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="solutions">
-        <span class="section-label">Success</span>
-        <h2>What We Manage</h2>
-        <div class="grid">
-            <div class="glass-card"><h4>Financial Services</h4></div>
-            <div class="glass-card"><h4>Healthcare Systems</h4></div>
-            <div class="glass-card"><h4>Public & Private Sector</h4></div>
-            <div class="glass-card"><h4>Telecommunications</h4></div>
+    <section id="why-us" style="background: rgba(255,255,255,0.02);">
+        <div class="flex-container">
+            <div class="flex-content" data-aos="fade-right">
+                <span class="section-label">The Infynetix Advantage</span>
+                <h2>Enterprise Technology at SMB Prices</h2>
+                <p style="color: var(--text-dim); margin-bottom: 25px;">You shouldn't have to choose between quality and affordability. We deliver Fortune 500-level IT and cybersecurity services at prices designed for growing businesses.</p>
+                <div class="glass-card" style="padding: 20px; margin-bottom: 15px;">
+                    <h4 style="color: var(--electric-blue);">Premium Quality</h4>
+                    <p style="font-size: 0.85rem;">Access to top-tier architects and consultants.</p>
+                </div>
+                <div class="glass-card" style="padding: 20px;">
+                    <h4 style="color: var(--electric-blue);">Cost Effective</h4>
+                    <p style="font-size: 0.85rem;">Transparent pricing with no enterprise "bloat."</p>
+                </div>
+            </div>
+            <div class="flex-image" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity Server">
+            </div>
         </div>
     </section>
 
-    <section id="careers" style="text-align: center;">
-        <span class="section-label">Careers</span>
-        <h2>Join the Future of Tech</h2>
-        <p style="color: var(--text-dim); margin-bottom: 30px;">Explore opportunities with North America's leading consulting team.</p>
-        <a href="mailto:careers@infynetix.com" class="btn btn-primary">View Openings</a>
+    <section id="consultation">
+        <div class="flex-container">
+            <div class="flex-image" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1573163281530-5be9c20a969d?auto=format&fit=crop&w=800&q=80" alt="Consultation">
+            </div>
+            <div class="flex-content" data-aos="fade-up">
+                <span class="section-label">Get Started Today</span>
+                <h2>Ready to Secure Your Business?</h2>
+                <p style="color: var(--text-dim); margin-bottom: 30px;">Schedule a free consultation and discover how we can transform your technology infrastructure while saving you money.</p>
+                
+                <ul style="list-style: none; margin-bottom: 40px;">
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--electric-blue); margin-right: 10px;"></i> Free security assessment & audit</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--electric-blue); margin-right: 10px;"></i> Custom solution roadmap</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--electric-blue); margin-right: 10px;"></i> Response within 24 hours</li>
+                </ul>
+
+                <a href="#contact" class="btn btn-primary">Get Your Free Consultation</a>
+                <a href="tel:+10000000000" class="btn btn-outline"><i class="fas fa-phone"></i> Call Us Now</a>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <span class="section-label">Get in Touch</span>
-            <h2>Contact Us</h2>
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2>Connect with an Expert</h2>
         </div>
         <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="Business Email" required>
-            <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
-            <button type="submit" class="btn btn-primary" style="width:100%; border:none; cursor:pointer;">Send Message</button>
+            <textarea name="message" rows="4" placeholder="How can we help your business?" required></textarea>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
         </form>
     </section>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="logo" style="margin-bottom: 20px;">INFYNETIX</div>
-                <p style="font-size: 0.8rem; color: var(--text-dim);">Enterprise-grade GRC and Network Engineering solutions across North America.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="#home">Home</a>
-                <a href="#about">About Us</a>
-                <a href="#careers">Careers</a>
-            </div>
-            <div class="footer-col">
-                <h4>Solutions</h4>
-                <a href="#services">Services</a>
-                <a href="#solutions">Success</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <a href="mailto:info@infynetix.com">info@infynetix.com</a>
-                <a href="mailto:admin@infynetix.com">admin@infynetix.com</a>
-            </div>
-        </div>
         <div class="footer-bottom">
             &copy; 2026 infynetix.com | All rights reserved
         </div>
