@@ -13,7 +13,7 @@
     <style>
         :root {
             --bg: #020617;
-            --card-glass: rgba(15, 23, 42, 0.85);
+            --card-glass: rgba(15, 23, 42, 0.75);
             --electric-blue: #00d4ff;
             --accent-gradient: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
             --text-main: #f8fafc;
@@ -41,15 +41,15 @@
         .logo-text { font-size: 1.5rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
         .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.3s; padding: 10px 0; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--electric-blue); }
 
         .mobile-menu-btn { display: none; font-size: 1.5rem; color: white; cursor: pointer; }
 
         /* HERO SECTION */
-        section { padding: 100px 8% 60px; }
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 80px; }
-        h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 25px; }
+        section { padding: 120px 8% 80px; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 30px; }
 
         /* BUTTONS */
         .btn { padding: 18px 36px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
@@ -58,37 +58,63 @@
             box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
             animation: heartbeat 2s infinite;
         }
-
         @keyframes heartbeat {
             0% { transform: scale(1); }
             5% { transform: scale(1.05); }
             10% { transform: scale(1); }
         }
 
-        /* GRID SYSTEM */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .glass-card { background: var(--card-glass); border: 1px solid var(--border-glass); padding: 35px; border-radius: 24px; transition: 0.4s; }
-        .flex-container { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
-        .flex-content, .flex-image { flex: 1; min-width: 300px; }
-        .flex-image img { width: 100%; border-radius: 24px; box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
+        /* PILLARS GRID */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+        .glass-card {
+            background: var(--card-glass); border: 1px solid var(--border-glass);
+            padding: 40px; border-radius: 24px; transition: 0.5s;
+        }
+        .glass-card:hover { transform: translateY(-10px); border-color: var(--electric-blue); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1); }
+        .glass-card i { font-size: 2rem; color: var(--electric-blue); margin-bottom: 25px; }
+        .glass-card ul { list-style: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-glass); }
+        .glass-card li { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px; display: flex; align-items: center; }
+        .glass-card li::before { content: "›"; color: var(--electric-blue); margin-right: 10px; font-weight: bold; }
 
-        /* FOOTER */
-        footer { padding: 60px 8%; background: #010409; border-top: 1px solid var(--border-glass); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        .footer-info-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; }
+        /* STATUS CARD */
+        .status-card {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80');
+            background-size: cover; border-radius: 24px; border: 1px solid var(--electric-blue);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; min-height: 350px;
+        }
+        .pulse { width: 10px; height: 10px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 10px #10b981; animation: blink 2s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
-        /* MOBILE BREAKPOINTS (The "Higher Complexity" stuff) */
+        /* FLEX CONTAINERS */
+        .flex-container { display: flex; flex-wrap: wrap; gap: 60px; align-items: center; }
+        .flex-content, .flex-image { flex: 1; min-width: 320px; }
+        .flex-image img { width: 100%; height: auto; display: block; border-radius: 32px; border: 1px solid var(--border-glass); }
+
+        /* GURU FOOTER */
+        footer { padding: 80px 8% 40px; background: #010409; border-top: 1px solid var(--border-glass); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        .footer-col h4 { color: white; margin-bottom: 25px; font-weight: 700; }
+        .footer-col a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; }
+        .footer-logo-box i { font-size: 2.5rem; color: var(--electric-blue); margin-bottom: 15px; }
+        .footer-info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 0.85rem; color: var(--text-dim); }
+        .footer-info-item i { color: var(--electric-blue); width: 15px; }
+
+        form { background: var(--card-glass); padding: 40px; border-radius: 30px; border: 1px solid var(--border-glass); max-width: 650px; margin: 0 auto; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: white; border-radius: 12px; font-family: inherit; }
+
+        /* MOBILE MENU BREAKPOINTS */
         @media (max-width: 968px) {
             .nav-links {
                 position: fixed; top: 70px; right: -100%; width: 100%; height: auto;
-                background: var(--bg); flex-direction: column; text-align: center;
+                background: rgba(2, 6, 23, 0.95); flex-direction: column; text-align: center;
                 padding: 40px 0; transition: 0.4s; border-bottom: 1px solid var(--border-glass);
                 backdrop-filter: blur(20px);
             }
             .nav-links.active { right: 0; }
             .mobile-menu-btn { display: block; }
             section { padding: 80px 5% 40px; }
-            .hero { height: auto; padding: 150px 5% 100px; }
+            .hero { height: auto; padding: 180px 5% 100px; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -111,30 +137,51 @@
     </nav>
 
     <section id="home" class="hero">
-        <div data-aos="fade-up">
+        <div data-aos="fade-up" style="text-align: center;">
             <h1>Digital Resilience<br><span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Unmatched Scale</span></h1>
-            <p style="margin-bottom: 50px; font-size: 1.1rem; color: var(--text-dim);">North American Enterprise IT & GRC. Elite Security for Modern Business.</p>
+            <p style="margin-bottom: 70px; font-size: 1.1rem; color: var(--text-dim);">North American Enterprise IT & GRC. Elite Security for Modern Business.</p>
             <a href="#consultation" class="btn btn-heartbeat">Start Free Consultation</a>
         </div>
     </section>
 
     <section id="services">
-        <h2 style="text-align: center; margin-bottom: 50px;">Technology Pillars</h2>
+        <span style="color: var(--electric-blue); letter-spacing: 3px; font-weight: 800; text-transform: uppercase; font-size: 0.75rem;">Expertise</span>
+        <h2>Technology Pillars</h2>
         <div class="grid">
             <div class="glass-card" data-aos="fade-up">
-                <i class="fas fa-server" style="color: var(--electric-blue); font-size: 2rem; margin-bottom: 20px;"></i>
-                <h3>IT Strategy</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">High-level transformation and operations support.</p>
+                <i class="fas fa-server"></i>
+                <h3>IT Strategy & Consulting</h3>
+                <ul><li>Infrastructure Audit</li><li>Strategic Transformation</li><li>Operations Support</li><li>Scale Optimization</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-network-wired" style="color: var(--electric-blue); font-size: 2rem; margin-bottom: 20px;"></i>
-                <h3>Networking</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">Enterprise-grade LAN/WAN design and security.</p>
+                <i class="fas fa-network-wired"></i>
+                <h3>Networking Solutions</h3>
+                <ul><li>LAN/WAN Design</li><li>Firewall Hardening</li><li>Traffic Engineering</li><li>Switching & Routing</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-shield-alt" style="color: var(--electric-blue); font-size: 2rem; margin-bottom: 20px;"></i>
-                <h3>Cybersecurity</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem;">GRC, NIST, and SOC2 compliance readiness.</p>
+                <i class="fas fa-user-shield"></i>
+                <h3>Cybersecurity & GRC</h3>
+                <ul><li>NIST/ISO Readiness</li><li>SOC2 Compliance</li><li>Zero-Trust Design</li><li>Threat Management</li></ul>
+            </div>
+            <div class="glass-card" data-aos="fade-up">
+                <i class="fas fa-cloud"></i>
+                <h3>Cloud & Database</h3>
+                <ul><li>Cloud Migration</li><li>AWS/Azure Scaling</li><li>Database Hardening</li><li>Performance Tuning</li></ul>
+            </div>
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-code"></i>
+                <h3>Software Development</h3>
+                <ul><li>Secure Applications</li><li>API & Backend</li><li>Custom Solutions</li><li>Coding Standards</li></ul>
+            </div>
+            <div class="status-card" data-aos="zoom-in" data-aos-delay="200">
+                <div style="background: rgba(0,0,0,0.8); padding: 25px; border-radius: 15px; border-left: 4px solid var(--electric-blue);">
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <span class="pulse"></span>
+                        <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; text-transform: uppercase;">Real-Time Monitoring</span>
+                    </div>
+                    <h4 style="margin-bottom: 5px;">North American Operations</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">24/7 endpoint protection across all managed infrastructure.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -143,66 +190,75 @@
         <div class="flex-container">
             <div class="flex-content" data-aos="fade-right">
                 <h2>Enterprise Power.<br>SMB Efficiency.</h2>
-                <p style="color: var(--text-dim); margin: 20px 0;">Fortune 500 expertise at a price point for growing businesses.</p>
+                <p style="color: var(--text-dim); margin-bottom: 30px;">Access Fortune 500-level IT expertise at a price point that makes sense for growing North American businesses.</p>
+                <div class="glass-card" style="padding: 25px; border-left: 4px solid var(--electric-blue);">
+                    <h4 style="color: var(--electric-blue);">Elite Quality</h4>
+                    <p style="font-size: 0.85rem;">Work with senior architects and GRC specialists without the corporate bloat.</p>
+                </div>
             </div>
             <div class="flex-image" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80" alt="Cybersecurity">
             </div>
         </div>
     </section>
 
     <section id="consultation">
-        <div class="flex-container" style="flex-direction: row-reverse;">
-            <div class="flex-content" data-aos="fade-left">
-                <h2>Ready to Scale?</h2>
-                <p style="color: var(--text-dim); margin-bottom: 30px;">Schedule your free infrastructure audit today.</p>
-                <a href="#contact" class="btn btn-primary">Book Now</a>
-            </div>
+        <div class="flex-container">
             <div class="flex-image" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Consultation">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Consultation">
+            </div>
+            <div class="flex-content" data-aos="fade-up">
+                <h2 style="margin-bottom: 20px;">Ready to Secure Your Business?</h2>
+                <p style="color: var(--text-dim); margin-bottom: 35px;">Schedule a free assessment to transform your infrastructure and optimize IT spend.</p>
+                <a href="#contact" class="btn btn-primary">Book Consultation</a>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up" style="background: var(--card-glass); padding: 40px; border-radius: 24px; border: 1px solid var(--border-glass); max-width: 600px; margin: 0 auto;">
+        <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-            <input type="text" name="name" placeholder="Full Name" required style="width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: white; border-radius: 12px;">
-            <input type="email" name="email" placeholder="Email" required style="width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: white; border-radius: 12px;">
-            <textarea name="message" rows="5" placeholder="Message" required style="width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: white; border-radius: 12px;"></textarea>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Business Email" required>
+            <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
         </form>
     </section>
 
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <div class="logo-text" style="margin-bottom: 20px;">INFYNETIX</div>
-                <p style="font-size: 0.85rem; color: var(--text-dim);">North American Enterprise IT Solutions.</p>
+                <div class="footer-logo-box"><i class="fas fa-shield-halved"></i><div class="logo-text">INFYNETIX INC</div></div>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Enterprise-grade IT and GRC solutions at affordable prices for North American businesses.</p>
             </div>
             <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#why-us">Why Choose Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-info-item"><i class="fas fa-location-dot"></i> North America</div>
                 <div class="footer-info-item"><i class="fas fa-envelope"></i> info@infynetix.com</div>
                 <div class="footer-info-item"><i class="fas fa-phone"></i> (289) 608-8597</div>
+                <a href="#contact" class="btn-primary" style="display: block; text-align: center; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 0.8rem; text-decoration: none;">Get Started</a>
             </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; font-size: 0.75rem; color: #475569;">
+            © 2026 Infynetix Inc. All rights reserved.
         </div>
     </footer>
 
     <script>
         const mobileToggle = document.getElementById('mobile-toggle');
         const navList = document.getElementById('nav-list');
-
-        mobileToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked
+        mobileToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navList.classList.remove('active');
-            });
+            link.addEventListener('click', () => { navList.classList.remove('active'); });
         });
     </script>
-
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init({ duration: 800, once: true });</script>
 </body>
