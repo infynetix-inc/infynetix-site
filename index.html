@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Infynetix Inc. provides elite Enterprise IT Strategy, Cybersecurity, GRC compliance, and Network Engineering solutions for businesses across North America.">
-    <title>Infynetix Inc. | Enterprise IT & GRC</title>
+    <meta name="description" content="Infynetix Inc. offers elite Enterprise IT Strategy, Cybersecurity, GRC compliance, and Network Engineering solutions tailored for North American businesses. Secure your digital future today.">
+    <title>Infynetix Inc. | Enterprise IT Strategy, Cybersecurity & GRC Consulting</title>
+    
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/shield.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -24,7 +26,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
 
-        /* EFFECT: Moving Nebula Background */
         .bg-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(125deg, #020617, #0f172a, #1e1b4b, #020617);
@@ -52,11 +53,13 @@
         section { padding: 120px 8% 80px; }
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         
-        /* EFFECT: Typewriter Cursor */
+        /* FIX: Title Structure Styling */
+        .hero-h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 5px; }
+        .hero-subtitle { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 800; line-height: 1.1; display: block; }
+        
         .typing-text::after { content: "|"; animation: blinkCursor 0.8s infinite; color: var(--electric-blue); }
         @keyframes blinkCursor { 50% { opacity: 0; } }
 
-        /* EFFECT: Heartbeat Animation */
         .btn-heartbeat { 
             background: var(--accent-gradient); color: white; padding: 18px 36px; border-radius: 50px; 
             font-weight: 700; text-decoration: none; display: inline-block;
@@ -65,7 +68,6 @@
         }
         @keyframes heartbeat { 0%, 100% { transform: scale(1); } 10% { transform: scale(1.06); } }
 
-        /* PILLARS GRID */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
         .glass-card {
             background: var(--card-glass); border: 1px solid var(--border-glass);
@@ -88,7 +90,6 @@
         .flex-container { display: flex; flex-wrap: wrap; gap: 60px; align-items: center; }
         .flex-image img { width: 100%; border-radius: 32px; border: 1px solid var(--border-glass); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
-        /* RESTORED GURU FOOTER */
         footer { padding: 80px 8% 40px; background: #010409; border-top: 1px solid var(--border-glass); }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
         .footer-col h4 { color: white; margin-bottom: 25px; font-weight: 700; }
@@ -125,8 +126,10 @@
 
     <section id="home" class="hero">
         <div data-aos="zoom-out">
-            <h1>Digital Resilience</h1>
-            <h1><span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" class="typing-text" id="typewriter"></span></h1>
+            <h1 class="hero-h1">Digital Resilience</h1>
+            <span class="hero-subtitle" style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" id="typewriter-container">
+                <span class="typing-text" id="typewriter"></span>
+            </span>
             <p style="margin-top: 20px; color: var(--text-dim); font-size: 1.1rem;">North American Enterprise IT & GRC. Elite Security for Modern Business.</p>
             <a href="#consultation" class="btn btn-heartbeat">Start Free Consultation</a>
         </div>
@@ -138,27 +141,27 @@
         <div class="grid">
             <div class="glass-card" data-aos="fade-up">
                 <i class="fas fa-server"></i>
-                <h3>IT Strategy & Consulting</h3>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">IT Strategy & Consulting</h3>
                 <ul><li>Infrastructure Audit</li><li>Strategic Transformation</li><li>Operations Support</li><li>Scale Optimization</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-network-wired"></i>
-                <h3>Networking Solutions</h3>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Networking Solutions</h3>
                 <ul><li>LAN/WAN Design</li><li>Firewall Hardening</li><li>Traffic Engineering</li><li>Switching & Routing</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-user-shield"></i>
-                <h3>Cybersecurity & GRC</h3>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Cybersecurity & GRC</h3>
                 <ul><li>NIST/ISO Readiness</li><li>SOC2 Compliance</li><li>Zero-Trust Design</li><li>Threat Management</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up">
                 <i class="fas fa-cloud"></i>
-                <h3>Cloud & Database</h3>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Cloud & Database</h3>
                 <ul><li>Cloud Migration</li><li>AWS/Azure Scaling</li><li>Database Hardening</li><li>Performance Tuning</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-code"></i>
-                <h3>Software Development</h3>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Software Development</h3>
                 <ul><li>Secure Applications</li><li>API & Backend</li><li>Custom Solutions</li><li>Coding Standards</li></ul>
             </div>
             <div class="status-card" data-aos="zoom-in" data-aos-delay="200">
@@ -167,7 +170,7 @@
                         <span class="pulse"></span>
                         <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; text-transform: uppercase;">Real-Time Monitoring</span>
                     </div>
-                    <h4 style="margin-bottom: 5px;">North American Operations</h4>
+                    <h4 style="margin-bottom: 5px; font-weight: 700;">North American Operations</h4>
                     <p style="font-size: 0.8rem; color: var(--text-dim);">24/7 endpoint protection across all managed infrastructure.</p>
                 </div>
             </div>
@@ -178,15 +181,15 @@
         <div class="flex-container">
             <div class="flex-content" data-aos="fade-right">
                 <span style="color: var(--electric-blue); font-weight: 800; text-transform: uppercase; font-size: 0.75rem;">Advantage</span>
-                <h2 style="margin-top: 10px;">Enterprise Power.<br>SMB Efficiency.</h2>
+                <h2 style="margin-top: 10px;">Enterprise Power. SMB Efficiency.</h2>
                 <p style="color: var(--text-dim); margin-bottom: 30px;">Access Fortune 500-level IT expertise at a price point that makes sense for growing North American businesses.</p>
                 <div class="glass-card" style="padding: 25px; border-left: 4px solid var(--electric-blue);">
-                    <h4 style="color: var(--electric-blue);">Elite Quality</h4>
+                    <h4 style="color: var(--electric-blue); font-weight: 700;">Elite Quality</h4>
                     <p style="font-size: 0.85rem;">Work with senior architects and GRC specialists without the corporate bloat.</p>
                 </div>
             </div>
             <div class="flex-image" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80" alt="Cybersecurity">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80" alt="Enterprise Cybersecurity">
             </div>
         </div>
     </section>
@@ -194,7 +197,7 @@
     <section id="consultation">
         <div class="flex-container">
             <div class="flex-image" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Consultation">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Professional Consultation">
             </div>
             <div class="flex-content" data-aos="fade-up">
                 <h2>Ready to Secure Your Business?</h2>
@@ -211,9 +214,9 @@
         </div>
         <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-up">
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Business Email" required>
-            <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+            <input type="text" name="name" placeholder="Full Name" required aria-label="Full Name">
+            <input type="email" name="email" placeholder="Business Email" required aria-label="Email">
+            <textarea name="message" rows="5" placeholder="How can we help?" required aria-label="Message"></textarea>
             <button type="submit" class="btn btn-primary" style="width:100%; border:none; cursor:pointer; background: var(--accent-gradient); color: white; padding: 18px; border-radius: 12px; font-weight: 700;">Send Message</button>
         </form>
     </section>
@@ -225,21 +228,21 @@
                 <p style="font-size: 0.85rem; color: var(--text-dim);">Enterprise-grade IT and GRC solutions at affordable prices for North American businesses.</p>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h4 style="font-weight: 700;">Quick Links</h4>
                 <a href="#home">Home</a>
                 <a href="#about">About Us</a>
                 <a href="#services">Services</a>
                 <a href="#why-us">Why Choose Us</a>
             </div>
             <div class="footer-col">
-                <h4>Our Services</h4>
+                <h4 style="font-weight: 700;">Our Services</h4>
                 <a href="#services">› IT Consulting</a>
                 <a href="#services">› Networking</a>
                 <a href="#services">› Cybersecurity</a>
                 <a href="#services">› Cloud Services</a>
             </div>
             <div class="footer-col">
-                <h4>Contact Us</h4>
+                <h4 style="font-weight: 700;">Contact Us</h4>
                 <div class="footer-info-item"><i class="fas fa-location-dot"></i> North America</div>
                 <div class="footer-info-item"><i class="fas fa-envelope"></i> info@infynetix.com</div>
                 <div class="footer-info-item"><i class="fas fa-phone"></i> (289) 608-8597</div>
@@ -253,7 +256,6 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // Effect: Typewriter
         const textToType = "Unmatched Scale";
         let index = 0;
         function typeHeadline() {
@@ -263,13 +265,9 @@
                 setTimeout(typeHeadline, 120);
             }
         }
-
-        // Mobile Menu
         const mobileToggle = document.getElementById('mobile-toggle');
         const navList = document.getElementById('nav-list');
         mobileToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
-
-        // Initialize
         window.onload = () => {
             AOS.init({ duration: 900, once: true });
             typeHeadline();
