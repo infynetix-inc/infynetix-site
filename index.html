@@ -36,7 +36,7 @@
             backdrop-filter: blur(25px); border-bottom: 1px solid var(--border-glass);
             z-index: 1000;
         }
-        .logo { font-size: 1.4rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo-text { font-size: 1.4rem; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         nav ul { display: flex; list-style: none; gap: 25px; }
         nav a { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
         nav a:hover { color: var(--electric-blue); }
@@ -56,29 +56,36 @@
             position: relative; overflow: hidden;
         }
         .glass-card:hover { transform: translateY(-10px); border-color: var(--electric-blue); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1); }
-        .glass-card i { font-size: 2.2rem; color: var(--electric-blue); margin-bottom: 25px; filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4)); }
+        .glass-card i { font-size: 2.2rem; color: var(--electric-blue); margin-bottom: 25px; }
         .glass-card ul { list-style: none; margin-top: 20px; }
         .glass-card li { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px; display: flex; align-items: center; }
         .glass-card li::before { content: "\f054"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--electric-blue); margin-right: 12px; font-size: 0.7rem; }
 
         .flex-container { display: flex; flex-wrap: wrap; gap: 60px; align-items: center; }
         .flex-content { flex: 1; min-width: 320px; }
-        .flex-image { flex: 1; min-width: 320px; border-radius: 32px; overflow: hidden; border: 1px solid var(--border-glass); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .flex-image { flex: 1; min-width: 320px; border-radius: 32px; overflow: hidden; border: 1px solid var(--border-glass); }
         .flex-image img { width: 100%; height: auto; display: block; filter: brightness(0.85); transition: 0.5s; }
-        .flex-image:hover img { transform: scale(1.05); filter: brightness(1); }
 
-        .btn { padding: 18px 36px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; font-size: 0.95rem; }
+        .btn { padding: 18px 36px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
         .btn-primary { background: var(--accent-gradient); color: white; box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3); }
-        .btn-outline { border: 1px solid var(--electric-blue); color: var(--electric-blue); margin-left: 15px; background: transparent; }
-        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+        
+        /* New Professional Footer Styles */
+        footer { padding: 80px 8% 40px; background: #010409; border-top: 1px solid var(--border-glass); color: var(--text-dim); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 50px; margin-bottom: 60px; text-align: left; }
+        .footer-col h4 { color: var(--text-main); margin-bottom: 25px; font-size: 1.1rem; font-weight: 700; }
+        .footer-col a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: 0.3s; }
+        .footer-col a:hover { color: var(--electric-blue); padding-left: 5px; }
+        .footer-logo { margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .footer-info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 0.9rem; }
+        .footer-info-item i { color: var(--electric-blue); width: 20px; }
+        .social-links { display: flex; gap: 15px; margin-top: 25px; }
+        .social-links a { font-size: 1.2rem; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.8rem; }
+        .footer-bottom-links { display: flex; gap: 20px; }
 
         form { max-width: 650px; margin: 0 auto; background: var(--card-glass); padding: 50px; border-radius: 32px; border: 1px solid var(--border-glass); }
-        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: white; border-radius: 12px; font-family: inherit; }
-        input:focus, textarea:focus { outline: 1px solid var(--electric-blue); background: rgba(0,0,0,0.5); }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: white; border-radius: 12px; }
 
-        footer { padding: 60px 8%; background: #010409; border-top: 1px solid var(--border-glass); text-align: center; color: var(--text-dim); }
-
-        @media (max-width: 768px) { .btn-outline { margin-left: 0; margin-top: 15px; width: 100%; text-align: center; } .btn-primary { width: 100%; text-align: center; } }
     </style>
 </head>
 <body>
@@ -86,7 +93,7 @@
     <div class="glow-mesh"></div>
 
     <nav>
-        <div class="logo">INFYNETIX</div>
+        <div class="logo-text">INFYNETIX</div>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
@@ -100,7 +107,7 @@
         <div data-aos="fade-up">
             <span class="section-label">Enterprise Technology Excellence</span>
             <h1>Digital Resilience<br><span>Unmatched Scale</span></h1>
-            <p>High-end IT and cybersecurity solutions for North American enterprises. Experience the power of Fortune 500 infrastructure tailored for your business.</p>
+            <p>High-end IT and cybersecurity solutions for North American enterprises. Fortune 500 infrastructure tailored for your business.</p>
             <a href="#consultation" class="btn btn-primary">Start Free Consultation</a>
         </div>
     </section>
@@ -112,66 +119,28 @@
             <div class="glass-card" data-aos="fade-up">
                 <i class="fas fa-server"></i>
                 <h3>IT Strategy & Consulting</h3>
-                <p>Strategic transformation and ongoing operations support to scale your business safely.</p>
                 <ul>
                     <li>Transformation Planning</li>
                     <li>Infrastructure Optimization</li>
                     <li>24/7 Operations Support</li>
                 </ul>
             </div>
-
             <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-network-wired"></i>
                 <h3>Networking Solutions</h3>
-                <p>Enterprise-grade connectivity designed for maximum speed and total security.</p>
                 <ul>
                     <li>LAN/WAN Deployment</li>
                     <li>Firewall & Security</li>
-                    <li>Advanced Routing/Switching</li>
+                    <li>Advanced Routing</li>
                 </ul>
             </div>
-
             <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-user-shield"></i>
                 <h3>Cybersecurity & GRC</h3>
-                <p>Protecting data and ensuring compliance across evolving North American frameworks.</p>
                 <ul>
-                    <li>Risk & Compliance (NIST/ISO)</li>
+                    <li>Risk & Compliance</li>
                     <li>Zero-Trust Architecture</li>
-                    <li>Cloud & Network Defense</li>
-                </ul>
-            </div>
-
-            <div class="glass-card" data-aos="fade-up">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud & Database</h3>
-                <p>High-performance migration and secure management for data-driven organizations.</p>
-                <ul>
-                    <li>Seamless Cloud Migration</li>
-                    <li>Architecture Design</li>
-                    <li>Secure Database Management</li>
-                </ul>
-            </div>
-
-            <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-code"></i>
-                <h3>Software Development</h3>
-                <p>Custom-built enterprise applications with deep security integrated from day one.</p>
-                <ul>
-                    <li>Custom App Development</li>
-                    <li>API & Backend Scaling</li>
-                    <li>Secure Coding Standards</li>
-                </ul>
-            </div>
-
-            <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-diagram-project"></i>
-                <h3>Product Leadership</h3>
-                <p>Strategic technology management to drive innovation and deliver complex results.</p>
-                <ul>
-                    <li>Product Strategy</li>
-                    <li>Platform Enablement</li>
-                    <li>Delivery Management</li>
+                    <li>Cloud Defense</li>
                 </ul>
             </div>
         </div>
@@ -182,67 +151,104 @@
             <div class="flex-content" data-aos="fade-right">
                 <span class="section-label">The Advantage</span>
                 <h2>Enterprise Power.<br>SMB Efficiency.</h2>
-                <p style="color: var(--text-dim); margin-bottom: 30px;">Access Fortune 500-level IT expertise at a price point that makes sense for growing North American businesses.</p>
-                
+                <p style="color: var(--text-dim); margin-bottom: 30px;">Access high-level IT expertise at a price point that makes sense for growing North American businesses.</p>
                 <div class="glass-card" style="padding: 25px; margin-bottom: 20px; border-left: 4px solid var(--electric-blue);">
                     <h4 style="color: var(--electric-blue); margin-bottom: 5px;">Elite Quality</h4>
-                    <p style="font-size: 0.85rem;">Work directly with senior architects and GRC specialists.</p>
-                </div>
-                <div class="glass-card" style="padding: 25px; border-left: 4px solid var(--electric-blue);">
-                    <h4 style="color: var(--electric-blue); margin-bottom: 5px;">Scalable Costs</h4>
-                    <p style="font-size: 0.85rem;">Transparent pricing models built for your specific growth phase.</p>
+                    <p style="font-size: 0.85rem;">Work with senior architects and GRC specialists.</p>
                 </div>
             </div>
             <div class="flex-image" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80" alt="Cybersecurity">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80" alt="Cybersecurity Center">
             </div>
         </div>
     </section>
 
-    <section id="consultation" style="background: rgba(124, 58, 237, 0.03);">
+    <section id="consultation">
         <div class="flex-container">
             <div class="flex-image" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1573163281530-5be9c20a969d?auto=format&fit=crop&w=1000&q=80" alt="Consultation">
+                <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=1000&q=80" alt="Consultation meeting">
             </div>
             <div class="flex-content" data-aos="fade-up">
                 <span class="section-label">Get Started</span>
                 <h2>Secure Your Business Today</h2>
                 <p style="color: var(--text-dim); margin-bottom: 35px;">Schedule a free assessment to discover how we can transform your infrastructure while optimizing your IT spend.</p>
-                
-                <ul style="list-style: none; margin-bottom: 40px;">
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--electric-blue); margin-right: 12px;"></i> Free Technology Audit</li>
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--electric-blue); margin-right: 12px;"></i> Custom Security Roadmap</li>
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--electric-blue); margin-right: 12px;"></i> No Hidden Fees</li>
-                </ul>
-
                 <a href="#contact" class="btn btn-primary">Book Consultation</a>
-                <a href="tel:+10000000000" class="btn btn-outline"><i class="fas fa-phone"></i> Call Now</a>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <span class="section-label">Contact</span>
-            <h2>Speak with a Consultant</h2>
-        </div>
         <form action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="Business Email" required>
-            <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+            <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
             <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2026 infynetix.com | All rights reserved</p>
-        <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.6;">Ajax, Ontario | North American IT Leadership</p>
+        <div class="footer-grid">
+            <div class="footer-col" style="flex: 1.5;">
+                <div class="footer-logo">
+                    <i class="fas fa-cloud-shield" style="font-size: 2rem; color: var(--electric-blue);"></i>
+                    <span class="logo-text">INFYNETIX INC</span>
+                </div>
+                <p style="font-size: 0.9rem; max-width: 300px;">Enterprise-grade IT and cybersecurity solutions at affordable prices for North American businesses.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#why-us">Why Choose Us</a>
+                <a href="#industries">Industries Served</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <a href="#services"><i class="fas fa-chevron-right" style="font-size: 0.7rem; margin-right: 8px;"></i> IT Services & Consulting</a>
+                <a href="#services"><i class="fas fa-chevron-right" style="font-size: 0.7rem; margin-right: 8px;"></i> Networking Solutions</a>
+                <a href="#services"><i class="fas fa-chevron-right" style="font-size: 0.7rem; margin-right: 8px;"></i> Cybersecurity Services</a>
+                <a href="#services"><i class="fas fa-chevron-right" style="font-size: 0.7rem; margin-right: 8px;"></i> Cloud & Database</a>
+                <a href="#services"><i class="fas fa-chevron-right" style="font-size: 0.7rem; margin-right: 8px;"></i> Software Development</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-info-item">
+                    <i class="fas fa-map-marker-alt"></i> North America
+                </div>
+                <div class="footer-info-item">
+                    <i class="fas fa-envelope"></i> info@infynetix.com
+                </div>
+                <div class="footer-info-item">
+                    <i class="fas fa-phone"></i> +1 (YOUR PHONE)
+                </div>
+                <a href="#contact" class="btn-primary" style="padding: 10px 20px; border-radius: 8px; font-size: 0.8rem; text-align: center; margin-top: 15px;">Get Started</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Infynetix Inc. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true, easing: 'ease-out' });
+        AOS.init({ duration: 800, once: true });
     </script>
 </body>
 </html>
