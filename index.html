@@ -49,6 +49,7 @@
         .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .hero h1 span { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
+        /* The Pillars Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
         .glass-card {
             background: var(--card-glass); border: 1px solid var(--border-glass);
@@ -60,6 +61,7 @@
         .glass-card li { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px; display: flex; align-items: center; }
         .glass-card li::before { content: "›"; color: var(--electric-blue); margin-right: 10px; font-weight: bold; }
 
+        /* ARROW SPOT CARD */
         .status-card {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80');
             background-size: cover; border-radius: 24px; border: 1px solid var(--electric-blue);
@@ -73,19 +75,38 @@
         .flex-image { flex: 1; min-width: 320px; border-radius: 32px; overflow: hidden; border: 1px solid var(--border-glass); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         .flex-image img { width: 100%; height: auto; display: block; transition: 0.5s; }
 
+        /* HEARTBEAT TAB - Polished & Optimized */
         .btn { padding: 18px 36px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-primary { background: var(--accent-gradient); color: white; }
+        
+        .btn-heartbeat { 
+            background: var(--accent-gradient); 
+            color: white; 
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+            animation: heartbeat 2s infinite; /* infinite pulse */
+        }
+        .btn-heartbeat:hover { animation-play-state: paused; transform: scale(1.05); filter: contrast(1.1); }
 
+        @keyframes heartbeat {
+            0% { transform: scale(1); box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3); }
+            5% { transform: scale(1.05); box-shadow: 0 10px 25px rgba(0, 212, 255, 0.5); }
+            10% { transform: scale(1); box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3); }
+            100% { transform: scale(1); } /* Creates a professional pulse and rest */
+        }
+
+        form { background: var(--card-glass); padding: 40px; border-radius: 30px; border: 1px solid var(--border-glass); max-width: 650px; margin: 0 auto; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: white; border-radius: 12px; }
+
+        /* GURU STYLE FOOTER RESTORED */
         footer { padding: 80px 8% 40px; background: #010409; border-top: 1px solid var(--border-glass); }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
         .footer-col h4 { color: white; margin-bottom: 25px; font-weight: 700; }
-        .footer-col a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; }
+        .footer-col a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; transition: 0.3s; }
+        .footer-col a:hover { color: var(--electric-blue); }
         .footer-logo-box i { font-size: 2.5rem; color: var(--electric-blue); margin-bottom: 15px; }
         .footer-info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 0.85rem; color: var(--text-dim); }
         .footer-info-item i { color: var(--electric-blue); width: 15px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.75rem; color: #475569; }
 
-        form { background: var(--card-glass); padding: 40px; border-radius: 30px; border: 1px solid var(--border-glass); max-width: 650px; margin: 0 auto; }
-        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-glass); color: white; border-radius: 12px; font-family: inherit; }
     </style>
 </head>
 <body>
@@ -106,8 +127,10 @@
     <section id="home" class="hero">
         <div data-aos="fade-up" style="text-align: center;">
             <h1>Digital Resilience<br><span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Unmatched Scale</span></h1>
-            <p>North American Enterprise IT & GRC. Elite Security for Modern Business.</p>
-            <a href="#consultation" class="btn btn-primary">Start Free Consultation</a>
+            
+            <p style="margin-bottom: 70px;">North American Enterprise IT & GRC. Elite Security for Modern Business.</p>
+            
+            <a href="#consultation" class="btn btn-heartbeat">Start Free Consultation</a>
         </div>
     </section>
 
@@ -189,7 +212,7 @@
             <h2>Speak with a Consultant</h2>
         </div>
         <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="PASTE_YOUR_KEY_HERE">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="Business Email" required>
             <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
@@ -206,7 +229,6 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <a href="#home">Home</a>
-                <a href="#about">About Us</a>
                 <a href="#services">Services</a>
                 <a href="#why-us">Why Choose Us</a>
             </div>
@@ -219,18 +241,18 @@
             </div>
             <div class="footer-col">
                 <h4>Contact Us</h4>
-                <div class="footer-info-item"><i class="fas fa-location-dot"></i> Eminence,Kentucky</div>
+                <div class="footer-info-item"><i class="fas fa-location-dot"></i> North America</div>
                 <div class="footer-info-item"><i class="fas fa-envelope"></i> info@infynetix.com</div>
                 <div class="footer-info-item"><i class="fas fa-phone"></i> (289) 608-8597</div>
                 <a href="#contact" class="btn-primary" style="display: block; text-align: center; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 0.8rem; text-decoration: none;">Get Started</a>
             </div>
         </div>
-        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; font-size: 0.75rem; color: #475569;">
-            © 2026 Infynetix Inc. All rights reserved.
+        <div class="footer-bottom">
+            <p>© 2026 Infynetix Inc. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init({ duration: 800, once: true, easing: 'ease-out' });</script>
+    <script>AOS.init({ duration: 800, once: true });</script>
 </body>
 </html>
