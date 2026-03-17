@@ -42,40 +42,39 @@
 
         section { padding: 120px 8% 80px; }
         h1 { font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 30px; }
-        h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 40px; font-weight: 800; }
         
-        /* THE PILLARS GRID - Balanced 3 Columns */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
         .glass-card {
             background: var(--card-glass); border: 1px solid var(--border-glass);
             padding: 40px; border-radius: 24px; transition: 0.5s;
         }
         .glass-card:hover { transform: translateY(-10px); border-color: var(--electric-blue); }
-        .glass-card i { font-size: 2.2rem; color: var(--electric-blue); margin-bottom: 25px; }
+        .glass-card i { font-size: 2rem; color: var(--electric-blue); margin-bottom: 25px; }
         .glass-card ul { list-style: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-glass); }
         .glass-card li { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 10px; display: flex; align-items: center; }
         .glass-card li::before { content: "›"; color: var(--electric-blue); margin-right: 10px; font-weight: bold; }
 
-        /* THE IMAGE CARD (WHERE THE ARROW POINTED) */
-        .image-box-card {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80');
-            background-size: cover; background-position: center;
-            border-radius: 24px; border: 1px solid var(--electric-blue);
-            display: flex; flex-direction: column; justify-content: flex-end; padding: 40px;
-            min-height: 350px; position: relative; overflow: hidden;
+        /* ARROW SPOT CARD */
+        .status-card {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80');
+            background-size: cover; border-radius: 24px; border: 1px solid var(--electric-blue);
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; min-height: 350px;
         }
-        .pulse { width: 12px; height: 12px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 10px #10b981; animation: blink 2s infinite; }
+        .pulse { width: 10px; height: 10px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 10px #10b981; animation: blink 2s infinite; }
         @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
         .flex-container { display: flex; flex-wrap: wrap; gap: 60px; align-items: center; }
         .flex-image { flex: 1; min-width: 320px; border-radius: 32px; overflow: hidden; border: 1px solid var(--border-glass); }
         .flex-image img { width: 100%; height: auto; display: block; }
 
-        .btn { padding: 18px 36px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; cursor: pointer; border: none; }
+        .btn { padding: 18px 36px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
         .btn-primary { background: var(--accent-gradient); color: white; }
 
-        footer { padding: 80px 8% 20px; background: #010409; border-top: 1px solid var(--border-glass); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        /* GURU STYLE FOOTER RESTORED */
+        footer { padding: 80px 8% 40px; background: #010409; border-top: 1px solid var(--border-glass); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        .footer-col h4 { color: white; margin-bottom: 25px; font-weight: 700; }
+        .footer-col a { color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 12px; font-size: 0.9rem; }
         .footer-logo-box i { font-size: 2.5rem; color: var(--electric-blue); margin-bottom: 15px; }
         .footer-info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 0.85rem; color: var(--text-dim); }
         .footer-info-item i { color: var(--electric-blue); width: 15px; }
@@ -100,9 +99,9 @@
     </nav>
 
     <section id="home" class="hero">
-        <div data-aos="fade-up">
+        <div data-aos="fade-up" style="text-align: center;">
             <h1>Digital Resilience<br><span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Unmatched Scale</span></h1>
-            <p>North American Enterprise IT & GRC Consulting. Trusted Excellence at Every Layer.</p>
+            <p>North American Enterprise IT & GRC. Elite Security for Modern Business.</p>
             <a href="#consultation" class="btn btn-primary">Start Free Consultation</a>
         </div>
     </section>
@@ -114,36 +113,36 @@
             <div class="glass-card" data-aos="fade-up">
                 <i class="fas fa-server"></i>
                 <h3>IT Strategy & Consulting</h3>
-                <ul><li>Infrastructure Audit</li><li>Transformation Planning</li><li>Lifecycle Management</li><li>24/7 Operations</li></ul>
+                <ul><li>Infrastructure Audit</li><li>Strategic Transformation</li><li>Operations Support</li><li>Scale Optimization</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-network-wired"></i>
                 <h3>Networking Solutions</h3>
-                <ul><li>LAN/WAN Design</li><li>Firewall Hardening</li><li>Traffic Optimization</li><li>Routing & Switching</li></ul>
+                <ul><li>LAN/WAN Design</li><li>Firewall Hardening</li><li>Traffic Engineering</li><li>Switching & Routing</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-user-shield"></i>
                 <h3>Cybersecurity & GRC</h3>
-                <ul><li>NIST/ISO Readiness</li><li>SOC2 Compliance</li><li>Zero-Trust Architecture</li><li>Vulnerability Management</li></ul>
+                <ul><li>NIST/ISO Readiness</li><li>SOC2 Compliance</li><li>Zero-Trust Design</li><li>Threat Management</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up">
                 <i class="fas fa-cloud"></i>
                 <h3>Cloud & Database</h3>
-                <ul><li>Cloud Migration</li><li>AWS/Azure Integration</li><li>Database Hardening</li><li>Performance Tuning</li></ul>
+                <ul><li>Cloud Migration</li><li>AWS/Azure Scaling</li><li>Database Hardening</li><li>Performance Tuning</li></ul>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-code"></i>
                 <h3>Software Development</h3>
-                <ul><li>Secure Applications</li><li>API Development</li><li>Backend Scaling</li><li>Secure Coding Standards</li></ul>
+                <ul><li>Secure Applications</li><li>API & Backend</li><li>Custom Solutions</li><li>Coding Standards</li></ul>
             </div>
-            <div class="image-box-card" data-aos="zoom-in" data-aos-delay="200">
-                <div style="background: rgba(0,0,0,0.7); padding: 20px; border-radius: 12px; border-left: 3px solid var(--electric-blue);">
+            <div class="status-card" data-aos="zoom-in" data-aos-delay="200">
+                <div style="background: rgba(0,0,0,0.8); padding: 25px; border-radius: 15px; border-left: 4px solid var(--electric-blue);">
                     <div style="display: flex; align-items: center; margin-bottom: 10px;">
                         <span class="pulse"></span>
-                        <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; text-transform: uppercase;">System Active</span>
+                        <span style="font-size: 0.7rem; font-weight: 800; color: #10b981; text-transform: uppercase;">Real-Time Monitoring</span>
                     </div>
-                    <h3 style="font-size: 1rem; margin-bottom: 5px;">North American Monitoring</h3>
-                    <p style="font-size: 0.75rem; color: var(--text-dim);">Infynetix GRC Engine is currently securing enterprise endpoints across the continent.</p>
+                    <h4 style="margin-bottom: 5px;">North American Operations</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-dim);">24/7 endpoint protection across all managed infrastructure.</p>
                 </div>
             </div>
         </div>
@@ -152,7 +151,7 @@
     <section id="consultation">
         <div class="flex-container">
             <div class="flex-image" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Consultation Meeting">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Consultation">
             </div>
             <div class="flex-content" data-aos="fade-up">
                 <h2 style="margin-bottom: 20px;">Ready to Secure Your Business?</h2>
@@ -176,21 +175,32 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="footer-logo-box"><i class="fas fa-shield-halved"></i><div class="logo-text">INFYNETIX INC</div></div>
-                <p style="font-size: 0.85rem; color: var(--text-dim);">Enterprise-grade IT and GRC solutions for North American businesses.</p>
+                <p style="font-size: 0.85rem; color: var(--text-dim);">Enterprise-grade IT and GRC solutions at affordable prices for North American businesses.</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
-                <a href="#home" style="color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 10px;">Home</a>
-                <a href="#services" style="color: var(--text-dim); text-decoration: none; display: block; margin-bottom: 10px;">Services</a>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#why-us">Why Choose Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <a href="#services">› IT Consulting</a>
+                <a href="#services">› Networking</a>
+                <a href="#services">› Cybersecurity</a>
+                <a href="#services">› Cloud Services</a>
             </div>
             <div class="footer-col">
                 <h4>Contact Us</h4>
+                <div class="footer-info-item"><i class="fas fa-location-dot"></i> North America</div>
                 <div class="footer-info-item"><i class="fas fa-envelope"></i> info@infynetix.com</div>
                 <div class="footer-info-item"><i class="fas fa-phone"></i> (289) 608-8597</div>
+                <a href="#contact" class="btn-primary" style="display: block; text-align: center; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 0.8rem; text-decoration: none;">Get Started</a>
             </div>
         </div>
-        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.7rem; color: #475569;">
-            © 2026 Infynetix Inc. All rights reserved.
+        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; font-size: 0.75rem; color: #475569;">
+            © 2026 Infynetix Inc. All rights reserved. | <a href="#" style="color: inherit; text-decoration: none;">Privacy Policy</a>
         </div>
     </footer>
 
